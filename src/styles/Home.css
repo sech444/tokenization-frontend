@@ -1,0 +1,648 @@
+/* Home.css - Custom styles for the Home component with subtle animations */
+
+/* Custom animations - Made more subtle */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes reverse-spin {
+  from { 
+    transform: rotate(360deg); 
+  }
+  to { 
+    transform: rotate(0deg); 
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(100%); 
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Animation classes - Reduced intensity */
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-reverse-spin {
+  animation: reverse-spin 2s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 5s ease infinite;
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+/* 3D perspective utilities - Reduced effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-3 {
+  transform: rotateY(3deg);
+}
+
+.group:hover .rotate-y-3 {
+  transform: rotateY(3deg);
+}
+
+/* Enhanced shadow */
+.shadow-3xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, #1e1b4b, #581c87, #be185d);
+}
+
+/* Stat card specific styles - Subtle animations */
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  height: 100%;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card.blue {
+  border-color: #dbeafe;
+}
+
+.stat-card.blue:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.2);
+}
+
+.stat-card.emerald {
+  border-color: #d1fae5;
+}
+
+.stat-card.emerald:hover {
+  border-color: #10b981;
+  box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.2);
+}
+
+.stat-card.purple {
+  border-color: #e9d5ff;
+}
+
+.stat-card.purple:hover {
+  border-color: #8b5cf6;
+  box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.2);
+}
+
+.stat-card.amber {
+  border-color: #fef3c7;
+}
+
+.stat-card.amber:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 20px 40px -10px rgba(245, 158, 11, 0.2);
+}
+
+/* Stat card background gradients - More subtle */
+.stat-card-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover .stat-card-bg {
+  opacity: 0.5;
+}
+
+.stat-card-bg.blue {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+}
+
+.stat-card-bg.emerald {
+  background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+}
+
+.stat-card-bg.purple {
+  background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+}
+
+.stat-card-bg.amber {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+}
+
+/* Icon containers - Reduced animation */
+.stat-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.05);
+}
+
+.stat-icon.blue {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.stat-icon.emerald {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.stat-icon.purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.stat-icon.amber {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Growth indicators */
+.growth-indicator {
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.growth-indicator.blue {
+  color: #3b82f6;
+}
+
+.growth-indicator.emerald {
+  color: #10b981;
+}
+
+.growth-indicator.purple {
+  color: #8b5cf6;
+}
+
+.growth-indicator.amber {
+  color: #f59e0b;
+}
+
+/* Progress bars - Subtle shimmer */
+.progress-bar {
+  width: 100%;
+  height: 0.5rem;
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: all 1.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill.blue {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.progress-fill.emerald {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.progress-fill.purple {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.progress-fill.amber {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.progress-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 3s infinite;
+}
+
+/* Floating particles - Removed excessive particles */
+.floating-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover .floating-particles {
+  opacity: 0.6;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.particle.blue {
+  background-color: #3b82f6;
+}
+
+.particle.emerald {
+  background-color: #10b981;
+}
+
+.particle.purple {
+  background-color: #8b5cf6;
+}
+
+.particle.amber {
+  background-color: #f59e0b;
+}
+
+/* Glow effects - Much more subtle */
+.glow-effect {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(15px);
+  transform: scale(1.05);
+}
+
+.stat-card:hover .glow-effect {
+  opacity: 0.1;
+}
+
+.glow-effect.blue {
+  background: radial-gradient(circle at center, #3b82f6, transparent 70%);
+}
+
+.glow-effect.emerald {
+  background: radial-gradient(circle at center, #10b981, transparent 70%);
+}
+
+.glow-effect.purple {
+  background: radial-gradient(circle at center, #8b5cf6, transparent 70%);
+}
+
+.glow-effect.amber {
+  background: radial-gradient(circle at center, #f59e0b, transparent 70%);
+}
+
+/* Main value text - Reduced scaling */
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover .stat-value {
+  font-size: 2.6rem;
+}
+
+/* Stat label */
+.stat-label {
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Loading spinner enhancements - Slower */
+.loading-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1e1b4b, #581c87, #be185d);
+}
+
+.loading-spinner-outer {
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  border-top-color: white;
+  margin: 0 auto;
+}
+
+.loading-spinner-inner {
+  width: 3rem;
+  height: 3rem;
+  border: 3px solid rgba(96, 165, 250, 0.5);
+  border-radius: 50%;
+  animation: reverse-spin 2s linear infinite;
+  border-top-color: #60a5fa;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+/* Hero section enhancements - Subtle particles */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e1b4b, #581c87, #be185d);
+  color: white;
+  overflow: hidden;
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 12s ease-in-out infinite;
+}
+
+/* Background shapes - Slower pulse */
+.bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: subtle-pulse 6s ease-in-out infinite;
+}
+
+.bg-shape.blue {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.bg-shape.purple {
+  background-color: rgba(139, 92, 246, 0.15);
+}
+
+.bg-shape.pink {
+  background-color: rgba(236, 72, 153, 0.15);
+}
+
+/* Button enhancements - Subtle hover */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+}
+
+.btn-secondary {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #581c87;
+  transform: translateY(-2px);
+}
+
+/* Trust indicators - Slower pulse */
+.trust-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.trust-dot.green {
+  background-color: #10b981;
+}
+
+.trust-dot.blue {
+  background-color: #3b82f6;
+}
+
+.trust-dot.purple {
+  background-color: #8b5cf6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1.5rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+  
+  .stat-card:hover .stat-value {
+    font-size: 2.1rem;
+  }
+  
+  .stat-icon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .stat-value {
+    font-size: 1.75rem;
+  }
+  
+  .stat-card:hover .stat-value {
+    font-size: 1.8rem;
+  }
+}
+
+/* Accessibility improvements - Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .stat-card:hover {
+    transform: none;
+  }
+  
+  .stat-icon {
+    transform: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .stat-card {
+    border: 2px solid #000;
+  }
+  
+  .stat-value {
+    color: #000;
+  }
+  
+  .stat-label {
+    color: #333;
+  }
+}
+
+/* Additional subtle enhancements */
+.stat-card {
+  backdrop-filter: blur(10px);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus states for accessibility */
+.stat-card:focus-within {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

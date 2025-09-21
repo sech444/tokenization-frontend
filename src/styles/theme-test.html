@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Theme Test - Real Estate Tokenization Platform</title>
+    <link rel="stylesheet" href="./optimized-theme.css">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            background-color: var(--surface-elevated);
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            margin: 0.5rem;
+            border: 2px solid var(--border);
+            position: relative;
+        }
+        .color-swatch::after {
+            content: attr(data-color);
+            position: absolute;
+            bottom: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            white-space: nowrap;
+        }
+        .theme-toggle-demo {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle-demo">
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Dark Mode">
+            🌙
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="mb-8">
+        <h1 class="text-center mb-4">Enhanced Theme System Test</h1>
+        <p class="text-center text-secondary">Real Estate Tokenization Platform - Optimized for Color Sharpness & Accessibility</p>
+    </header>
+
+    <!-- Color Palette Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Color Palette - WCAG AA+ Compliant</h2>
+        <div class="grid grid-cols-4 gap-4 mb-6">
+            <div>
+                <h3 class="mb-3">Primary Colors</h3>
+                <div class="color-swatch" style="background-color: var(--primary)" data-color="Primary"></div>
+                <div class="color-swatch" style="background-color: var(--primary-hover)" data-color="Hover"></div>
+                <div class="color-swatch" style="background-color: var(--primary-active)" data-color="Active"></div>
+            </div>
+            <div>
+                <h3 class="mb-3">Semantic Colors</h3>
+                <div class="color-swatch" style="background-color: var(--success)" data-color="Success"></div>
+                <div class="color-swatch" style="background-color: var(--error)" data-color="Error"></div>
+                <div class="color-swatch" style="background-color: var(--warning)" data-color="Warning"></div>
+            </div>
+            <div>
+                <h3 class="mb-3">Surface Colors</h3>
+                <div class="color-swatch" style="background-color: var(--background)" data-color="Background"></div>
+                <div class="color-swatch" style="background-color: var(--surface)" data-color="Surface"></div>
+                <div class="color-swatch" style="background-color: var(--surface-elevated)" data-color="Elevated"></div>
+            </div>
+            <div>
+                <h3 class="mb-3">Text Colors</h3>
+                <div class="color-swatch" style="background-color: var(--text-primary)" data-color="Primary"></div>
+                <div class="color-swatch" style="background-color: var(--text-secondary)" data-color="Secondary"></div>
+                <div class="color-swatch" style="background-color: var(--text-tertiary)" data-color="Tertiary"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Typography - Optimized Font Rendering</h2>
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <h1>Heading 1 - Manrope Bold</h1>
+                <h2>Heading 2 - Manrope Bold</h2>
+                <h3>Heading 3 - Manrope Semibold</h3>
+                <h4>Heading 4 - Manrope Semibold</h4>
+                <h5>Heading 5 - Manrope Medium</h5>
+                <h6>Heading 6 - Manrope Medium</h6>
+            </div>
+            <div>
+                <p class="text-primary">Primary text with enhanced contrast - Inter Regular</p>
+                <p class="text-secondary">Secondary text with improved readability - Inter Regular</p>
+                <p class="text-tertiary">Tertiary text with WCAG AA compliance - Inter Regular</p>
+                <p class="text-muted">Muted text with proper contrast ratio - Inter Regular</p>
+                <code>Code text with optimized monospace font - SF Mono</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Button System Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Button System - Sharp & Interactive</h2>
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <h3 class="mb-4">Button Variants</h3>
+                <div class="flex flex-wrap gap-3 mb-4">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                    <button class="btn btn-ghost">Ghost Button</button>
+                    <button class="btn btn-danger">Danger Button</button>
+                </div>
+            </div>
+            <div>
+                <h3 class="mb-4">Button Sizes</h3>
+                <div class="flex flex-wrap items-center gap-3 mb-4">
+                    <button class="btn btn-primary btn-xs">Extra Small</button>
+                    <button class="btn btn-primary btn-sm">Small</button>
+                    <button class="btn btn-primary">Default</button>
+                    <button class="btn btn-primary btn-lg">Large</button>
+                    <button class="btn btn-primary btn-xl">Extra Large</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card System Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Card System - Sharp Shadows & Borders</h2>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Property Token #1</h3>
+                    <p class="card-subtitle">Luxury Apartment Complex</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Enhanced card design with improved shadows and better visual hierarchy for tokenized real estate assets.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-sm">View Details</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Property Token #2</h3>
+                    <p class="card-subtitle">Commercial Office Building</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Sharp borders and optimized contrast ratios provide better visual definition and accessibility.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-outline btn-sm">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Property Token #3</h3>
+                    <p class="card-subtitle">Retail Shopping Center</p>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">High-DPI display optimizations ensure crisp rendering on all modern devices and screens.</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-secondary btn-sm">Invest Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form System Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Form System - Better Focus States</h2>
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <div class="form-group">
+                    <label class="form-label required">Property Name</label>
+                    <input type="text" class="form-input" placeholder="Enter property name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Investment Amount</label>
+                    <input type="number" class="form-input" placeholder="$0.00" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Property Type</label>
+                    <select class="form-select">
+                        <option>Select property type</option>
+                        <option>Residential</option>
+                        <option>Commercial</option>
+                        <option>Industrial</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-textarea" placeholder="Describe the property..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Error State Example</label>
+                    <input type="email" class="form-input" data-error="true" value="invalid-email" />
+                    <span class="form-error">Please enter a valid email address</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert System Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Alert System - Better Visual Hierarchy</h2>
+        <div class="grid grid-cols-1 gap-4">
+            <div class="alert alert-success status-success">
+                <strong>Success!</strong> Your property token has been successfully created and is now available for investment.
+            </div>
+            <div class="alert alert-info status-info">
+                <strong>Information:</strong> The tokenization process typically takes 24-48 hours to complete.
+            </div>
+            <div class="alert alert-warning status-warning">
+                <strong>Warning:</strong> Please ensure all property documentation is complete before proceeding.
+            </div>
+            <div class="alert alert-error status-error">
+                <strong>Error:</strong> Unable to process the tokenization request. Please check your inputs and try again.
+            </div>
+        </div>
+    </section>
+
+    <!-- Badge System Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Badge System - Sharp & Readable</h2>
+        <div class="flex flex-wrap gap-3">
+            <span class="badge badge-primary">Active</span>
+            <span class="badge badge-success">Verified</span>
+            <span class="badge badge-warning">Pending</span>
+            <span class="badge badge-error">Rejected</span>
+            <span class="badge badge-secondary">Draft</span>
+            <span class="badge badge-outline">Outline</span>
+        </div>
+    </section>
+
+    <!-- Shadow & Depth Test -->
+    <section class="test-section">
+        <h2 class="mb-6">Enhanced Shadow System - Better Definition</h2>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="p-6 bg-surface-elevated rounded-xl shadow-sm">
+                <h3>Small Shadow</h3>
+                <p>Enhanced opacity for better definition</p>
+            </div>
+            <div class="p-6 bg-surface-elevated rounded-xl shadow-md">
+                <h3>Medium Shadow</h3>
+                <p>Improved visual separation</p>
+            </div>
+            <div class="p-6 bg-surface-elevated rounded-xl shadow-lg">
+                <h3>Large Shadow</h3>
+                <p>Sharp and professional appearance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Features -->
+    <section class="test-section">
+        <h2 class="mb-6">Performance Optimizations</h2>
+        <div class="grid grid-cols-2 gap-6">
+            <div>
+                <h3 class="mb-3">Font Rendering</h3>
+                <ul class="text-secondary">
+                    <li>✅ Antialiased font smoothing</li>
+                    <li>✅ Optimized text rendering</li>
+                    <li>✅ Reduced font loading (2 fonts vs 4)</li>
+                    <li>✅ Better typography hierarchy</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="mb-3">Visual Enhancements</h3>
+                <ul class="text-secondary">
+                    <li>✅ WCAG AA+ color compliance</li>
+                    <li>✅ High-DPI display optimization</li>
+                    <li>✅ Enhanced shadow definition</li>
+                    <li>✅ Improved contrast ratios</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? null : 'dark';
+            
+            if (newTheme) {
+                html.setAttribute('data-theme', newTheme);
+                document.querySelector('.theme-toggle').textContent = '☀️';
+            } else {
+                html.removeAttribute('data-theme');
+                document.querySelector('.theme-toggle').textContent = '🌙';
+            }
+        }
+
+        // Add some interactive demonstrations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects demonstration
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+            });
+
+            // Add button interaction feedback
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Create ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255, 255, 255, 0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+                    
+                    this.style.position = 'relative';
+                    this.style.overflow = 'hidden';
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Add CSS for ripple animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

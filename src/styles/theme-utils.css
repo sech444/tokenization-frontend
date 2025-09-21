@@ -1,0 +1,580 @@
+/* ================================
+   COMPREHENSIVE DARK MODE & MOBILE FIXES
+   ================================ */
+
+/* Force CSS variables to override Tailwind defaults */
+* {
+    box-sizing: border-box;
+}
+
+/* Root level dark mode enforcement */
+[data-theme="dark"] {
+    --tw-bg-opacity: 1 !important;
+    background-color: var(--background) !important;
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] *,
+[data-theme="dark"] *:before,
+[data-theme="dark"] *:after {
+    border-color: var(--border) !important;
+}
+
+/* ================================
+   CARD COMPONENT DARK MODE FIXES
+   ================================ */
+
+/* Force card backgrounds in dark mode */
+.card,
+[data-theme="dark"] .card {
+    background-color: var(--surface-elevated) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Ensure card content inherits proper colors */
+.card *,
+[data-theme="dark"] .card * {
+    color: inherit !important;
+}
+
+.card .text-primary,
+[data-theme="dark"] .card .text-primary {
+    color: var(--text-primary) !important;
+}
+
+.card .text-secondary,
+[data-theme="dark"] .card .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.card .text-tertiary,
+[data-theme="dark"] .card .text-tertiary {
+    color: var(--text-tertiary) !important;
+}
+
+/* Card header/body/footer dark mode */
+.card-header,
+.card-body,
+.card-footer,
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-footer {
+    background-color: transparent !important;
+    border-color: var(--border) !important;
+}
+
+/* ================================
+   BACKGROUND UTILITIES - DARK MODE OVERRIDE
+   ================================ */
+
+/* Force background colors in dark mode */
+[data-theme="dark"] .bg-background {
+    background-color: var(--background) !important;
+}
+
+[data-theme="dark"] .bg-surface {
+    background-color: var(--surface) !important;
+}
+
+[data-theme="dark"] .bg-surface-elevated {
+    background-color: var(--surface-elevated) !important;
+}
+
+[data-theme="dark"] .bg-surface-hover {
+    background-color: var(--surface-hover) !important;
+}
+
+/* Main app background */
+[data-theme="dark"] .min-h-screen {
+    background-color: var(--background) !important;
+}
+
+/* Sidebar dark mode */
+[data-theme="dark"] .lg\:w-64,
+[data-theme="dark"] .max-w-xs {
+    background-color: var(--surface) !important;
+}
+
+/* Top navigation dark mode */
+[data-theme="dark"] .sticky.top-0 {
+    background-color: var(--surface) !important;
+    border-color: var(--border) !important;
+}
+
+/* ================================
+   MOBILE RESPONSIVE FIXES
+   ================================ */
+
+/* Mobile container improvements */
+@media (max-width: 767px) {
+    /* Force mobile layout */
+    .lg\:pl-64 {
+        padding-left: 0 !important;
+    }
+    
+    .lg\:w-64 {
+        display: none !important;
+    }
+    
+    /* Mobile card improvements */
+    .card {
+        margin: 0.5rem !important;
+        border-radius: var(--radius-lg) !important;
+        box-shadow: var(--shadow-sm) !important;
+    }
+    
+    /* Mobile padding adjustments */
+    .px-4 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .py-6 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    /* Mobile grid - force single column */
+    .grid-cols-1,
+    .md\:grid-cols-2,
+    .md\:grid-cols-3,
+    .md\:grid-cols-4,
+    .lg\:grid-cols-2,
+    .lg\:grid-cols-3,
+    .lg\:grid-cols-4 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Mobile button groups */
+    .flex.space-x-2,
+    .flex.space-x-3,
+    .flex.space-x-4 {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex.space-x-2 > *,
+    .flex.space-x-3 > *,
+    .flex.space-x-4 > * {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Mobile typography */
+    .text-2xl {
+        font-size: 1.5rem !important;
+        line-height: 2rem !important;
+    }
+    
+    .text-lg {
+        font-size: 1.125rem !important;
+        line-height: 1.75rem !important;
+    }
+    
+    /* Mobile spacing */
+    .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 1rem !important;
+    }
+    
+    .gap-6 {
+        gap: 1rem !important;
+    }
+    
+    .gap-4 {
+        gap: 0.75rem !important;
+    }
+    
+    .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Mobile button sizing */
+    .btn {
+        width: 100% !important;
+        padding: 0.75rem 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .btn-sm {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.875rem !important;
+    }
+    
+    /* Mobile table responsiveness */
+    .overflow-hidden {
+        overflow-x: auto !important;
+    }
+    
+    table {
+        min-width: 600px !important;
+        font-size: 0.875rem !important;
+    }
+    
+    th, td {
+        padding: 0.5rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* Mobile sidebar overlay */
+    .fixed.inset-0.z-40 {
+        z-index: 9999 !important;
+    }
+    
+    .fixed.inset-0.bg-gray-600 {
+        background-color: rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    /* Mobile sidebar panel */
+    .relative.flex-1.flex.flex-col.max-w-xs {
+        background-color: var(--surface-elevated) !important;
+        max-width: 85% !important;
+    }
+    
+    [data-theme="dark"] .relative.flex-1.flex.flex-col.max-w-xs {
+        background-color: var(--surface-elevated) !important;
+    }
+}
+
+/* ================================
+   BADGE COMPONENT FIXES
+   ================================ */
+
+/* Ensure badge colors work in dark mode */
+.badge-success,
+[data-theme="dark"] .badge-success {
+    background-color: var(--success) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--success-border) !important;
+}
+
+.badge-error,
+[data-theme="dark"] .badge-error {
+    background-color: var(--error) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--error-border) !important;
+}
+
+.badge-warning,
+[data-theme="dark"] .badge-warning {
+    background-color: var(--warning-color) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--warning-border) !important;
+}
+
+.badge-primary,
+[data-theme="dark"] .badge-primary {
+    background-color: var(--primary) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--primary) !important;
+}
+
+.badge-outline,
+[data-theme="dark"] .badge-outline {
+    background-color: transparent !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid var(--border) !important;
+}
+
+/* ================================
+   BUTTON COMPONENT FIXES
+   ================================ */
+
+/* Button dark mode fixes */
+.btn-primary,
+[data-theme="dark"] .btn-primary {
+    background: var(--gradient-primary) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--primary) !important;
+}
+
+.btn-secondary,
+[data-theme="dark"] .btn-secondary {
+    background-color: var(--surface-elevated) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+.btn-outline,
+[data-theme="dark"] .btn-outline {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+.btn-ghost,
+[data-theme="dark"] .btn-ghost {
+    background-color: transparent !important;
+    color: var(--text-secondary) !important;
+    border-color: transparent !important;
+}
+
+.btn-success,
+[data-theme="dark"] .btn-success {
+    background-color: var(--success) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--success) !important;
+}
+
+.btn-error,
+[data-theme="dark"] .btn-error {
+    background-color: var(--error) !important;
+    color: var(--text-inverse) !important;
+    border-color: var(--error) !important;
+}
+
+/* ================================
+   PROGRESS BAR FIXES
+   ================================ */
+
+/* Progress bar background in dark mode */
+.bg-surface,
+[data-theme="dark"] .bg-surface {
+    background-color: var(--surface) !important;
+}
+
+.bg-primary,
+[data-theme="dark"] .bg-primary {
+    background-color: var(--primary) !important;
+}
+
+/* ================================
+   INPUT AND FORM FIXES
+   ================================ */
+
+/* Input field dark mode */
+input, select, textarea,
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background-color: var(--surface-elevated) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+}
+
+input::placeholder,
+[data-theme="dark"] input::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* ================================
+   TABLE FIXES
+   ================================ */
+
+/* Table dark mode */
+table,
+[data-theme="dark"] table {
+    background-color: transparent !important;
+}
+
+thead,
+[data-theme="dark"] thead {
+    background-color: var(--surface) !important;
+}
+
+tbody,
+[data-theme="dark"] tbody {
+    background-color: var(--surface-elevated) !important;
+}
+
+tr:hover,
+[data-theme="dark"] tr:hover {
+    background-color: var(--surface-hover) !important;
+}
+
+/* ================================
+   NOTIFICATION DROPDOWN FIXES
+   ================================ */
+
+/* Notification dropdown dark mode */
+.absolute.right-0.mt-2.w-80,
+[data-theme="dark"] .absolute.right-0.mt-2.w-80 {
+    background-color: var(--surface-elevated) !important;
+    border-color: var(--border) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+/* ================================
+   UTILITY CLASS OVERRIDES
+   ================================ */
+
+/* Text color utilities - force override */
+.text-primary,
+[data-theme="dark"] .text-primary {
+    color: var(--text-primary) !important;
+}
+
+.text-secondary,
+[data-theme="dark"] .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+.text-tertiary,
+[data-theme="dark"] .text-tertiary {
+    color: var(--text-tertiary) !important;
+}
+
+.text-muted,
+[data-theme="dark"] .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Border utilities */
+.border-default,
+[data-theme="dark"] .border-default {
+    border-color: var(--border) !important;
+}
+
+.border,
+[data-theme="dark"] .border {
+    border-color: var(--border) !important;
+}
+
+/* ================================
+   LAYOUT CONTAINER FIXES
+   ================================ */
+
+/* Main layout containers */
+.min-h-screen,
+[data-theme="dark"] .min-h-screen {
+    min-height: 100vh !important;
+    background-color: var(--background) !important;
+}
+
+.flex.flex-col.flex-1,
+[data-theme="dark"] .flex.flex-col.flex-1 {
+    background-color: var(--background) !important;
+}
+
+main,
+[data-theme="dark"] main {
+    background-color: var(--background) !important;
+}
+
+/* ================================
+   SPECIFIC COMPONENT FIXES
+   ================================ */
+
+/* KYC and Projects view specific fixes */
+.space-y-6,
+[data-theme="dark"] .space-y-6 {
+    color: var(--text-primary) !important;
+}
+
+/* Grid container fixes */
+.grid.gap-6,
+[data-theme="dark"] .grid.gap-6 {
+    background-color: transparent !important;
+}
+
+/* Flex container fixes */
+.flex.items-center.justify-between,
+[data-theme="dark"] .flex.items-center.justify-between {
+    color: var(--text-primary) !important;
+}
+
+/* ================================
+   FORCE INHERITANCE
+   ================================ */
+
+/* Force color inheritance for all elements */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] p {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] span {
+    color: inherit !important;
+}
+
+[data-theme="dark"] div {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+/* Override any remaining white backgrounds */
+[data-theme="dark"] * {
+    background-color: inherit !important;
+}
+
+[data-theme="dark"] .bg-white {
+    background-color: var(--surface-elevated) !important;
+}
+
+[data-theme="dark"] .text-black {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-gray-900 {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .text-gray-600 {
+    color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .text-gray-500 {
+    color: var(--text-tertiary) !important;
+}
+
+[data-theme="dark"] .bg-gray-50 {
+    background-color: var(--surface) !important;
+}
+
+[data-theme="dark"] .bg-gray-100 {
+    background-color: var(--surface-elevated) !important;
+}
+
+[data-theme="dark"] .border-gray-200 {
+    border-color: var(--border) !important;
+}
+
+/* ================================
+   MOBILE TOUCH IMPROVEMENTS
+   ================================ */
+
+@media (max-width: 767px) {
+    /* Better touch targets */
+    button,
+    .btn,
+    a {
+        min-height: 44px !important;
+        min-width: 44px !important;
+        touch-action: manipulation !important;
+    }
+    
+    /* Improved scrolling */
+    .overflow-y-auto {
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Mobile viewport fixes */
+    .min-h-screen {
+        min-height: 100dvh !important;
+    }
+}
+
+/* ================================
+   PRINT MEDIA FIXES
+   ================================ */
+
+@media print {
+    [data-theme="dark"] * {
+        background-color: white !important;
+        color: black !important;
+        border-color: black !important;
+    }
+}

@@ -1,0 +1,485 @@
+/* ================================
+   MOBILE OVERLAY & LAYOUT FIXES
+   ================================ */
+
+/* Add this to the end of your existing theme CSS file */
+
+/* ================================
+   MOBILE RESPONSIVE OVERRIDES
+   ================================ */
+
+/* Force mobile layout structure */
+@media (max-width: 1023px) {
+    /* Hide desktop sidebar completely */
+    .lg\:flex.lg\:w-64 {
+        display: none !important;
+    }
+    
+    /* Remove desktop sidebar padding */
+    .lg\:pl-64 {
+        padding-left: 0 !important;
+    }
+    
+    /* Ensure main content takes full width */
+    .flex.flex-col.flex-1 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+    
+    /* Mobile sidebar overlay - proper z-index */
+    .fixed.inset-0 {
+        z-index: 9999 !important;
+    }
+    
+    /* Mobile sidebar backdrop */
+    .fixed.inset-0.bg-gray-600 {
+        background-color: rgba(0, 0, 0, 0.75) !important;
+        backdrop-filter: blur(4px) !important;
+    }
+    
+    /* Mobile sidebar panel positioning */
+    .relative.flex-1.flex.flex-col.max-w-xs {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        height: 100vh !important;
+        width: 85% !important;
+        max-width: 320px !important;
+        z-index: 10000 !important;
+        transform: translateX(0) !important;
+        transition: transform 0.3s ease-in-out !important;
+    }
+    
+    /* Mobile close button positioning */
+    .absolute.top-0.right-0.-mr-12.pt-2 {
+        position: absolute !important;
+        top: 1rem !important;
+        right: -3rem !important;
+        z-index: 10001 !important;
+    }
+    
+    .absolute.top-0.right-0.-mr-12.pt-2 button {
+        width: 40px !important;
+        height: 40px !important;
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        border-radius: 50% !important;
+        color: white !important;
+        border: none !important;
+    }
+    
+    /* Mobile hamburger menu button */
+    .lg\:hidden {
+        display: block !important;
+    }
+    
+    /* Mobile top navigation */
+    .sticky.top-0 {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 1000 !important;
+        width: 100% !important;
+    }
+    
+    /* Mobile main content area */
+    main.flex-1 {
+        width: 100% !important;
+        min-height: calc(100vh - 4rem) !important;
+        padding: 0 !important;
+    }
+    
+    /* Mobile content padding */
+    .py-6.px-4 {
+        padding: 1rem !important;
+    }
+    
+    /* Mobile cards spacing */
+    .space-y-6 > * + * {
+        margin-top: 1rem !important;
+    }
+    
+    /* Mobile grid - force single column */
+    .grid {
+        display: block !important;
+    }
+    
+    .grid > * {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Mobile button groups - stack vertically */
+    .flex.items-center.justify-between,
+    .flex.items-center.space-x-3,
+    .flex.items-center.space-x-4,
+    .flex.space-x-2,
+    .flex.space-x-3 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex.space-x-2 > *,
+    .flex.space-x-3 > *,
+    .flex.space-x-4 > * {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+    
+    /* Mobile typography adjustments */
+    .text-2xl {
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+    }
+    
+    .text-3xl {
+        font-size: 1.5rem !important;
+        line-height: 2rem !important;
+    }
+    
+    /* Mobile table container */
+    .overflow-hidden {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Mobile table styling */
+    table {
+        min-width: 600px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    table th,
+    table td {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Mobile notification dropdown */
+    .absolute.right-0.mt-2.w-80 {
+        position: fixed !important;
+        top: 4rem !important;
+        left: 1rem !important;
+        right: 1rem !important;
+        width: auto !important;
+        max-width: none !important;
+        z-index: 10002 !important;
+    }
+    
+    /* Mobile search bar - hide on small screens */
+    .max-w-2xl.mx-auto.hidden.md\:block {
+        display: none !important;
+    }
+    
+    /* Mobile card improvements */
+    .card {
+        margin: 0.5rem 0 !important;
+        border-radius: 0.5rem !important;
+    }
+    
+    .card .flex.items-center.justify-between {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
+    }
+    
+    .card .grid.grid-cols-1.md\:grid-cols-3,
+    .card .grid.grid-cols-1.md\:grid-cols-4 {
+        display: block !important;
+    }
+    
+    .card .grid > div {
+        margin-bottom: 1rem !important;
+        padding-bottom: 0.5rem !important;
+        border-bottom: 1px solid var(--border) !important;
+    }
+    
+    .card .grid > div:last-child {
+        border-bottom: none !important;
+    }
+    
+    /* Mobile button sizing */
+    .btn {
+        width: 100% !important;
+        padding: 0.75rem 1rem !important;
+        margin-bottom: 0.5rem !important;
+        justify-content: center !important;
+    }
+    
+    .btn-sm {
+        width: auto !important;
+        min-width: 80px !important;
+        padding: 0.5rem 0.75rem !important;
+        margin-bottom: 0.25rem !important;
+        margin-right: 0.5rem !important;
+    }
+    
+    /* Mobile badge adjustments */
+    .badge {
+        font-size: 0.75rem !important;
+        padding: 0.25rem 0.5rem !important;
+    }
+    
+    /* Mobile progress bar */
+    .flex.items-center.space-x-2 {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex-1.bg-surface.rounded-full {
+        width: 100% !important;
+    }
+}
+
+/* ================================
+   MOBILE TOUCH IMPROVEMENTS
+   ================================ */
+
+@media (max-width: 767px) {
+    /* Better touch targets */
+    button,
+    .btn,
+    a[role="button"] {
+        min-height: 44px !important;
+        min-width: 44px !important;
+        touch-action: manipulation !important;
+    }
+    
+    /* Prevent zoom on input focus */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+    
+    /* Mobile viewport */
+    .min-h-screen {
+        min-height: 100dvh !important;
+    }
+    
+    /* Mobile safe areas */
+    .py-6 {
+        padding-top: max(1rem, env(safe-area-inset-top)) !important;
+        padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+    }
+    
+    .px-4 {
+        padding-left: max(1rem, env(safe-area-inset-left)) !important;
+        padding-right: max(1rem, env(safe-area-inset-right)) !important;
+    }
+}
+
+/* ================================
+   SIDEBAR ANIMATION FIXES
+   ================================ */
+
+/* Sidebar enter animation */
+.mobile-sidebar-enter {
+    transform: translateX(-100%) !important;
+}
+
+.mobile-sidebar-enter-active {
+    transform: translateX(0) !important;
+    transition: transform 300ms ease-in-out !important;
+}
+
+/* Sidebar exit animation */
+.mobile-sidebar-exit {
+    transform: translateX(0) !important;
+}
+
+.mobile-sidebar-exit-active {
+    transform: translateX(-100%) !important;
+    transition: transform 300ms ease-in-out !important;
+}
+
+/* ================================
+   DARK MODE MOBILE FIXES
+   ================================ */
+
+@media (max-width: 1023px) {
+    [data-theme="dark"] .relative.flex-1.flex.flex-col.max-w-xs {
+        background-color: var(--surface-elevated) !important;
+        border-right: 1px solid var(--border) !important;
+    }
+    
+    [data-theme="dark"] .fixed.inset-0.bg-gray-600 {
+        background-color: rgba(0, 0, 0, 0.85) !important;
+    }
+    
+    [data-theme="dark"] .absolute.top-0.right-0.-mr-12.pt-2 button {
+        background-color: rgba(15, 23, 42, 0.9) !important;
+        color: var(--text-inverse) !important;
+    }
+}
+
+/* ================================
+   SPECIFIC COMPONENT MOBILE FIXES
+   ================================ */
+
+/* KYC View mobile fixes */
+@media (max-width: 767px) {
+    .grid.gap-6 {
+        display: block !important;
+        gap: 0 !important;
+    }
+    
+    .grid.gap-6 > .card {
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Fix badge and text alignment */
+    .flex.items-center.space-x-2 {
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex.items-center.space-x-2 > * {
+        margin-left: 0 !important;
+    }
+    
+    /* Stack document badges */
+    .flex.flex-wrap.gap-1 {
+        flex-direction: column !important;
+        gap: 0.25rem !important;
+    }
+    
+    /* Mobile action buttons */
+    .flex.space-x-2.mt-1 {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex.space-x-2.mt-1 .btn-sm {
+        width: 100% !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Mobile bottom buttons */
+    .flex.pl-4.pb-4.space-x-3 {
+        flex-direction: column !important;
+        padding: 1rem !important;
+        gap: 0.5rem !important;
+    }
+    
+    .flex.pl-4.pb-4.space-x-3 .btn {
+        margin-left: 0 !important;
+    }
+}
+
+/* Projects View mobile fixes */
+@media (max-width: 767px) {
+    /* Project status badges */
+    .flex.items-center.justify-between .badge {
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Progress bar container */
+    .flex.items-center.space-x-2 {
+        align-items: stretch !important;
+    }
+    
+    .flex.items-center.space-x-2 .flex-1 {
+        margin-bottom: 0.25rem !important;
+    }
+    
+    /* Project action buttons */
+    .flex.space-x-3:last-child {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        margin-top: 1rem !important;
+        padding-top: 1rem !important;
+        border-top: 1px solid var(--border) !important;
+    }
+    
+    .flex.space-x-3:last-child .btn {
+        margin-left: 0 !important;
+    }
+    
+    .flex.space-x-3:last-child .btn-ghost {
+        width: auto !important;
+        align-self: center !important;
+        margin-top: 0.5rem !important;
+    }
+}
+
+/* ================================
+   PERFORMANCE OPTIMIZATIONS
+   ================================ */
+
+/* Optimize mobile animations */
+@media (max-width: 1023px) {
+    .card,
+    .btn,
+    button {
+        will-change: auto !important;
+    }
+    
+    /* Disable hover effects on touch devices */
+    .card:hover,
+    .btn:hover,
+    tr:hover {
+        transform: none !important;
+        box-shadow: var(--shadow-sm) !important;
+    }
+}
+
+/* Reduce motion on mobile for better performance */
+@media (prefers-reduced-motion: reduce) and (max-width: 767px) {
+    * {
+        animation-duration: 0ms !important;
+        transition-duration: 0ms !important;
+    }
+}
+
+/* ================================
+   UTILITY OVERRIDES FOR MOBILE
+   ================================ */
+
+/* Mobile spacing overrides */
+@media (max-width: 767px) {
+    .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 1rem !important;
+    }
+    
+    .space-x-2 > :not([hidden]) ~ :not([hidden]),
+    .space-x-3 > :not([hidden]) ~ :not([hidden]),
+    .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+        margin-left: 0 !important;
+        margin-top: 0.5rem !important;
+    }
+    
+    .gap-6 {
+        gap: 1rem !important;
+    }
+    
+    .gap-4 {
+        gap: 0.75rem !important;
+    }
+    
+    /* Mobile margin overrides */
+    .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+    
+    .mt-1 {
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Mobile padding overrides */
+    .p-4 {
+        padding: 1rem !important;
+    }
+    
+    .px-6 {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    .py-4 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+}

@@ -1,0 +1,104 @@
+🚀 **Tokenization Platform API Endpoints**
+
+## **Basic Application Routes**
+- `GET /` - Welcome message
+- `GET /health` - Health check endpoint
+
+## **📋 Admin Routes**
+### **Dashboard & System Management**
+- `GET /api/admin/dashboard` - Get admin dashboard with statistics
+- `GET /api/admin/system-stats` - Get system statistics (DB connections, etc.)
+- `GET /api/admin/compliance/overview` - Get compliance overview
+
+### **User Management**
+- `GET /api/admin/users` - List users for management (with filtering)
+- `PUT /api/admin/users/:user_id` - Update user details (admin only)
+- `POST /api/admin/users/:user_id/suspend` - Suspend a user
+- `POST /api/admin/users/:user_id/reactivate` - Reactivate a suspended user
+
+### **Project Management**
+- `POST /api/admin/projects/:project_id/approve` - Approve a project
+
+### **KYC Management**
+- `POST /api/admin/kyc/:kyc_id/force-approve` - Force approve KYC verification
+
+## **🔐 KYC & Compliance Routes**
+### **KYC Operations**
+- `POST /api/kyc/initiate` - Initiate KYC verification process
+- `GET /api/kyc/status/:user_id?` - Get KYC status (own or others if admin)
+- `POST /api/kyc/review/:kyc_id` - Review KYC submission
+- `GET /api/kyc/verifications` - List KYC verifications (with filtering)
+
+### **Document Management**
+- `POST /api/kyc/upload-document` - Upload KYC document (multipart form)
+
+### **AML & Compliance**
+- `POST /api/kyc/aml-screening` - Perform AML screening
+- `GET /api/compliance/profile/:user_id?` - Get compliance profile
+
+## **🏢 Project Routes**
+### **Project CRUD Operations**
+- `GET /api/projects` - List projects (with filtering by status, type, etc.)
+- `POST /api/projects` - Create new project
+- `GET /api/projects/:project_id` - Get specific project details
+- `PUT /api/projects/:project_id` - Update project details
+- `DELETE /api/projects/:project_id` - Delete project
+
+### **Project Operations**
+- `POST /api/projects/:project_id/tokenize` - Tokenize a project
+- `GET /api/projects/:project_id/analytics` - Get project analytics
+
+## **📊 Query Parameters & Filtering**
+
+### **Admin User Management (`GET /api/admin/users`)**
+- `page` - Page number (default: 1)
+- `limit` - Items per page (default: 20, max: 100)
+- `status` - Filter by user status (`active`, `inactive`, `suspended`, `pending_verification`)
+- `role` - Filter by user role
+- `risk_level` - Filter by risk level
+- `search` - Search in email, first_name, last_name
+
+### **Project Listing (`GET /api/projects`)**
+- `page` - Page number (default: 1)
+- `limit` - Items per page (default: 20, max: 100)
+- `status` - Filter by project status
+- `project_type` - Filter by project type
+- `location` - Filter by location
+- `min_investment` - Minimum investment amount
+- `max_investment` - Maximum investment amount
+
+### **KYC Verifications (`GET /api/kyc/verifications`)**
+- `page` - Page number (default: 1)
+- `limit` - Items per page (default: 20)
+- `status` - Filter by verification status
+- `risk_level` - Filter by risk level
+
+## **🔒 Permission Requirements**
+
+### **Admin Only:**
+- User suspension/reactivation
+- Force KYC approval
+- System stats access
+- User management updates
+
+### **Admin + Moderator:**
+- Dashboard access
+- Project approval
+
+### **Admin + Compliance Officer:**
+- Compliance overview
+- KYC review and approval
+- AML screening operations
+- KYC verifications listing
+
+### **Admin + Project Manager + Developer:**
+- Project creation
+
+### **Authenticated Users:**
+- Own KYC operations
+- Own compliance profile access
+- Project listing/viewing
+
+## **📝 Request/Response Formats**
+
+All endpoints expect/return JSON format with consistent error handling:

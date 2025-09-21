@@ -1,0 +1,28 @@
+/* Optimized CSS Architecture - Real Estate Tokenization Platform */
+/* Enhanced Color Sharpness & Performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Optimized Theme System - Single Source of Truth */
+@import './styles/optimized-theme.css';
+@import './styles/admin-utilities.css';
+@import './styles/mobile-hover-fixes.css';
+@import './styles/theme-utils.css';
+/* Performance Optimization: Preload critical fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+/* ================================
+   TAILWIND CUSTOMIZATIONS
+   ================================ */
+
+  
+
+/* Force dark mode CSS variables to take precedence over Tailwind */
+@layer utilities {
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+}
+
