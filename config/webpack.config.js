@@ -1,3 +1,5 @@
+// tokenization-frontend/config/webpack.config.js
+
 'use strict';
 
 const fs = require('fs');
