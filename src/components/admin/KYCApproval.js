@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { adminAPI } from "../../services/api";
-import { Button } from "../../components/ui/button";
-import { Card, CardContent } from "../../components/ui/card";
+import { Button } from "../ui/button";
+import { Card, CardContent } from "../ui/card";
 // import { Select } from "../../components/ui/select"; // if you have one
 import { toast } from "react-hot-toast";
 
@@ -78,7 +78,7 @@ export default function KYCApproval() {
         <p className="text-gray-500">No records found</p>
       ) : (
         kycList.map((record) => (
-           <Card key={record.user_id} className="mb-4">
+          <Card key={record.user_id} className="mb-4">
             <CardContent className="flex flex-col md:flex-row justify-between md:items-center gap-3">
               <div>
                 <p><strong>User:</strong> {record.user_email}</p>

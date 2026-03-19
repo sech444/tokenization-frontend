@@ -173,15 +173,15 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { adminAPI } from "../../services/api";
-import { Button } from "../../components/ui/button";
-import { Input } from "../../components/ui/input";
-import { Badge } from "../../components/ui/badge";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { Badge } from "../ui/badge";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardContent,
-} from "../../components/ui/card";
+} from "../ui/card";
 import { toast } from "react-hot-toast";
 import { ChevronLeft, ChevronRight, Search, ChevronDown } from "lucide-react";
 

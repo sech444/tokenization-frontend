@@ -1,5 +1,5 @@
 {
-  "name": "tokenization-platform-frontend",
+  "name": "RealTokenize",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,6 +57,7 @@
     "jest-watch-typeahead": "^1.0.0",
     "lucide-react": "^0.290.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "next": "^16.0.0",
     "postcss": "^8.4.4",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
@@ -75,7 +76,6 @@
     "react-query": "^3.39.3",
     "react-refresh": "^0.11.0",
     "react-router-dom": "^6.30.1",
-    "react-scripts": "^0.0.0",
     "recharts": "^2.15.4",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^5.0.0",
@@ -88,11 +88,10 @@
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
     "trezor-connect": "^8.2.12",
-    "typescript": "^5.2.2",
+    "typescript": "4.9.5",
     "util": "^0.12.5",
     "web3": "^4.2.2",
     "webpack": "^5.64.4",
-    "webpack-dev-server": "^5.2.2",
     "webpack-manifest-plugin": "^4.0.2",
     "workbox-webpack-plugin": "^6.4.1",
     "zod": "^3.22.4",
@@ -112,7 +111,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.5.6",
     "prettier": "^3.0.3",
-    "tailwindcss": "^3.4.17"
+    "react-scripts": "^5.0.1",
+    "tailwindcss": "^3.4.17",
+    "webpack-dev-server": "^4.15.1"
   },
   "scripts": {
     "start": "node scripts/start.js",

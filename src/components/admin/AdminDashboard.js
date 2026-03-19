@@ -47,7 +47,7 @@
 //   const [notifications, setNotifications] = useState([]);
 //   const [notificationOpen, setNotificationOpen] = useState(false);
 
-  
+
 
 //   // Mock data - replace with actual API calls
 //   useEffect(() => {
@@ -359,7 +359,7 @@
 //                 </span>
 //               </div>
 //             </div>
-            
+
 //             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
 //               <div>
 //                 <p className="text-sm pl-4 font-medium text-primary">Submitted</p>
@@ -497,7 +497,7 @@
 //                 {project.status}
 //               </span>
 //             </div>
-            
+
 //             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
 //               <div>
 //                 <p className="text-sm font-medium text-primary p-4">Type</p>
@@ -778,7 +778,7 @@
 //             >
 //               <Menu className="h-6 w-6 text-tertiary" />
 //             </button>
-            
+
 //             <div className="flex-1 max-w-2xl mx-auto hidden md:block">
 //               <div className="relative">
 //                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-tertiary w-4 h-4" />
@@ -789,7 +789,7 @@
 //                 />
 //               </div>
 //             </div>
-            
+
 //             <div className="flex items-center space-x-4">
 //               <div className="relative">
 //                 <button 
@@ -803,7 +803,7 @@
 //                 </button>
 //                 {notificationOpen && <NotificationDropdown />}
 //               </div>
-              
+
 //               <button className="btn btn-ghost">
 //                 <LogOut className="h-5 w-5 mr-2" />
 //                 Logout
@@ -835,9 +835,9 @@
 import React from "react";
 
 
-import  Button  from '../../components/ui/button'; // expects "button.js"
-import { Card, CardContent } from '../../components/ui/card.js';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../components/ui/tabs.js';
+import Button from '../ui/button'; // expects "button.js"
+import { Card, CardContent } from '../ui/card.js';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../ui/tabs.js';
 
 import KYCApproval from "./KYCApproval";
 import UserManagement from "./UserManagement";

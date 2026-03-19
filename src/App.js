@@ -23,7 +23,9 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';  
 import Projects from './components/projects/ProjectCreator';
 // import LoginEmailPage from "./components/auth/LoginEmailPage";
+import VerifyEmailPage from './components/auth/VerifyEmailPage';
 import { Web3Provider } from "./contexts/Web3Context";  
+import ForgotPassword from "./pages/ForgotPassword";
 
 
 // Layout component with Header and Footer on all pages
@@ -62,6 +64,9 @@ function App() {
             <Route path="/features" element={<FeaturesPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/verify-email" element={<VerifyEmailPage />} />
+            {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
             {/* <Route path="/login-email" element={<LoginEmailPage />} /> */}
 
             
